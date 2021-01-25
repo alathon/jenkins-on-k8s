@@ -21,4 +21,4 @@ secretGenerator:
   - name: jenkins-admin-password
     envs:
       - jenkins-admin-password.env
-namespace: jenkins-on-k8s-github-example
+namespace: jenkins-example
