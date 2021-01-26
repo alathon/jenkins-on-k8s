@@ -15,6 +15,12 @@ spec:
           volumeMounts:
             - mountPath: /jenkins-customization/example
               name: jenkins-example-customization
+          startupProbe:
+            periodSeconds: 30
+          livenessProbe:
+            periodSeconds: 20
+          readinessProbe:
+            periodSeconds: 20
       volumes:
         - name: jenkins-example-customization
           configMap:
