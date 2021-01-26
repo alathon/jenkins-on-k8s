@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-ingress
+  namespace: jenkins-example
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: poseidon.staging.pleo.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: jenkins-master
+              servicePort: 8080
