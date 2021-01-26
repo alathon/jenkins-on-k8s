@@ -12,6 +12,8 @@ spec:
                 name: jenkins-admin-password
             - configMapRef:
                 name: github-organization-name
+            - configMapRef:
+                name: github-auth-details
           volumeMounts:
             - mountPath: /jenkins-customization/example
               name: jenkins-example-customization

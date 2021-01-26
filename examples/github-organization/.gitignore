@@ -1,3 +1,4 @@
 jenkins-admin-password.env
 github-organization-name.env
+github-auth-details.env
 secrets.yaml
