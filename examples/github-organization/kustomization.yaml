@@ -8,21 +8,15 @@ resources:
   - secrets.yaml
 components:
   - ../../components/github-organization
+  - ../../components/github-oauth
 configMapGenerator:
   - name: jenkins-example-customization
     files:
-      - configuration/groovy/set-admin-account.groovy
-      - configuration/groovy/set-authorization-strategy.groovy
       - configuration/groovy/set-url.groovy
-      - configuration/groovy/set-github-auth-strategy.groovy
   - name: github-organization-name
     envs:
      - github-organization-name.env
   - name: github-auth-details
     envs:
       - github-auth-details.env
-secretGenerator:
-  - name: jenkins-admin-password
-    envs:
-      - jenkins-admin-password.env
 namespace: jenkins-example
