@@ -8,8 +8,6 @@ spec:
       containers:
         - name: jenkins
           envFrom:
-            - secretRef:
-                name: jenkins-admin-password
             - configMapRef:
                 name: github-organization-name
             - configMapRef:

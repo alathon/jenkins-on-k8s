@@ -1,1 +1,1 @@
-github-oauth-plugin
+github-oauth
