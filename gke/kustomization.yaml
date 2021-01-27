@@ -6,6 +6,7 @@ patchesStrategicMerge:
   - deployments.yaml
 resources:
   - secrets.yaml
+  - secrets-agents.yaml
 components:
   - ../components/github-organization
   - ../components/github-oauth
