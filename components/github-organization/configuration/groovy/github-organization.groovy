@@ -18,7 +18,7 @@ if (orgName != null) {
     def navigator = new GitHubSCMNavigator(orgName)
     navigator.credentialsId = orgCred
     navigator.traits = [
-    new jenkins.scm.impl.trait.WildcardSCMSourceFilterTrait('pypi-module-jenkinsfile', ''),
+    new jenkins.scm.impl.trait.WildcardSCMSourceFilterTrait('dbt-jenkins-helloworld', ''),
     new jenkins.scm.impl.trait.RegexSCMHeadFilterTrait('.*'),
     new BranchDiscoveryTrait(1), // Exclude branches that are also filed as PRs.
     new OriginPullRequestDiscoveryTrait(1), // Merging the pull request with the current target branch revision.
