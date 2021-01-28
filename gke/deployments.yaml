@@ -9,9 +9,9 @@ spec:
         - name: jenkins
           envFrom:
             - configMapRef:
-                name: github-organization-name
+                name: github-organization-plugin
             - configMapRef:
-                name: github-auth-details
+                name: github-oauth-plugin
             - configMapRef:
                 name: jenkins-url
           volumeMounts:
