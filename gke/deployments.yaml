@@ -12,9 +12,13 @@ spec:
                 name: github-organization-name
             - configMapRef:
                 name: github-auth-details
+            - configMapRef:
+                name: jenkins-url
           volumeMounts:
-            - mountPath: /jenkins-customization/example
-              name: jenkins-example-customization
+            - mountPath: /jenkins-customization/gke
+              name: jenkins-gke-customization
+            - mountPath: /jenkins-plugins/gke
+              name: jenkins-gke-plugins
           startupProbe:
             periodSeconds: 30
           livenessProbe:
@@ -22,6 +26,9 @@ spec:
           readinessProbe:
             periodSeconds: 20
       volumes:
-        - name: jenkins-example-customization
+        - name: jenkins-gke-plugins
           configMap:
-            name: jenkins-example-customization
+            name: jenkins-gke-plugins
+        - name: jenkins-gke-customization
+          configMap:
+            name: jenkins-gke-customization

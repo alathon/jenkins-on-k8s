@@ -12,9 +12,17 @@ components:
   - ../components/github-organization
   - ../components/github-oauth
 configMapGenerator:
-  - name: jenkins-example-customization
+  - name: jenkins-gke-plugins
     files:
-      - configuration/groovy/set-url.groovy
+      - configuration/plugins.txt
+  - name: jenkins-gke-customization
+    files:
+      - configuration/groovy/1-set-url.groovy
+      - configuration/groovy/2-add-gh-server.groovy
+      - configuration/groovy/3-set-global-colors.groovy
+  - name: jenkins-url
+    envs:
+      - jenkins-url.env
   - name: github-organization-name
     envs:
      - github-organization-name.env
