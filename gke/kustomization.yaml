@@ -22,11 +22,11 @@ configMapGenerator:
       - configuration/groovy/3-set-global-colors.groovy
   - name: jenkins-url
     envs:
-      - jenkins-url.env
-  - name: github-organization-name
+      - env/jenkins-url.env
+  - name: github-organization-plugin
     envs:
-     - github-organization-name.env
-  - name: github-auth-details
+     - env/github-organization-plugin.env
+  - name: github-oauth-plugin
     envs:
-      - github-auth-details.env
+      - env/github-oauth-plugin.env
 namespace: jenkins-example
